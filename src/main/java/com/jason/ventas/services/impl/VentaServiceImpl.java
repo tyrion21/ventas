@@ -41,5 +41,20 @@ public class VentaServiceImpl implements VentaService{
         ventaDAO.deleteById(id);
     }
 
+    @Override
+    public Double getGananciasAnuales(Long productoId, int year) {
+        return ventaDAO.getGananciasAnuales(productoId, year);
+    }
+
+    @Override
+    public Double getGananciasMensuales(Long productoId, int year, int month) {
+        return ventaDAO.getGananciasMensuales(productoId, year, month);
+    }
+
+    @Override
+    public Double getGananciasDiarias(Long productoId, int year, int month, int day) {
+        return ventaDAO.getGananciasDiarias(productoId, year, month, day);
+    }
+
     
 }

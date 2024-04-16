@@ -16,4 +16,10 @@ public interface VentaService {
     Venta updateVenta(Long id, Venta venta);
 
     void deleteById(Long id);
+
+    Double getGananciasAnuales(Long productoId, int year);
+
+    Double getGananciasMensuales(Long productoId, int year, int month);
+
+    Double getGananciasDiarias(Long productoId, int year, int month, int day);
 }

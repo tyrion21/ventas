@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Builder
 @Table(name = "ventas")
@@ -14,6 +16,9 @@ import java.time.LocalDate;
 
 
 public class Venta {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private Long id;
     private LocalDate fechaVenta;
@@ -21,6 +26,7 @@ public class Venta {
 
     @ManyToOne
     @JoinColumn(name = "producto_id")
+    @JsonIgnore
     private Producto producto;
     
 }
