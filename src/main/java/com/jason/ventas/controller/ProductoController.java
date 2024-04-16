@@ -76,8 +76,8 @@ public class ProductoController {
         logger.info("Creando producto: {}", productoDto);
 
         if (productoDto.getNombre().isBlank()) {
-            logger.error("El titulo es requerido");
-            return ResponseEntity.badRequest().body("El titulo es requerido");
+            logger.error("El nombre es requerido");
+            return ResponseEntity.badRequest().body("El nombre es requerido");
         }
 
         productoService.createProducto(Producto.builder()
@@ -123,5 +123,7 @@ public class ProductoController {
         logger.error("Id es requerido");
         return ResponseEntity.badRequest().build();
     }
+
+    
     
 }
