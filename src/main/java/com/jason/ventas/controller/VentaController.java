@@ -31,7 +31,7 @@ public class VentaController {
     private VentaService ventaService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getProductoById(@PathVariable Long id) {
+    public ResponseEntity<?> getVentaById(@PathVariable Long id) {
         logger.info("Obteniendo ventas con id {}", id);
         Optional<Venta> ventaOpcional = ventaService.getVentaById(id);
 
@@ -44,10 +44,10 @@ public class VentaController {
                     .total(venta.getTotal())
                     .productoId(venta.getProducto())
                     .build();
-            logger.info("Producto encontrado: {}", ventaDTO);
+            logger.info("Venta encontrada: {}", ventaDTO);
             return ResponseEntity.ok(ventaDTO);
         } else {
-            logger.info("Producto no encontrado");
+            logger.info("Venta no encontrada");
         }
 
         return ResponseEntity.notFound().build();
@@ -121,7 +121,8 @@ public class VentaController {
             return ResponseEntity.ok().body("Venta eliminada");
         }
         logger.error("Id es requerido");
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.badRequest().body("Id requerido");
+        //en este caso profesor deberia usar manejo de excepciones para que el usuario sepa que el id es requerido
     }
 
     @GetMapping("/{productoId}/ganancias/{year}")
