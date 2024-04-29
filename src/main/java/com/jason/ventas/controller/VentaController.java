@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import com.jason.ventas.dto.VentaDTO;
 import com.jason.ventas.model.Venta;
@@ -45,13 +49,18 @@ public class VentaController {
                     .productoId(venta.getProducto())
                     .build();
             logger.info("Venta encontrada: {}", ventaDTO);
-            return ResponseEntity.ok(ventaDTO);
+
+            // Crea un objeto EntityModel con el VentaDTO y un enlace a sí mismo
+            EntityModel<VentaDTO> resource = EntityModel.of(ventaDTO);
+            WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).getVentaById(id));
+            resource.add(linkTo.withSelfRel());
+
+            return ResponseEntity.ok(resource);
         } else {
             logger.info("Venta no encontrada");
         }
 
         return ResponseEntity.notFound().build();
-
     }
 
     @GetMapping
