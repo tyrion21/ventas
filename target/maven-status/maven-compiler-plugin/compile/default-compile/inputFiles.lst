@@ -1,0 +1,17 @@
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\persistence\impl\ProductoDAOImpl.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\model\Venta.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\dto\ProductoDTO.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\services\impl\ProductoServiceImpl.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\persistence\VentaDAO.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\services\impl\VentaServiceImpl.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\repositories\ProductoRepository.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\repositories\VentaRepository.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\VentasApplication.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\controller\VentaController.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\dto\VentaDTO.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\model\Producto.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\services\ProductoService.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\services\VentaService.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\persistence\ProductoDAO.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\controller\ProductoController.java
+C:\Apps\duoc\ventas\src\main\java\com\jason\ventas\persistence\impl\VentaDAOImpl.java
